@@ -10,16 +10,20 @@
     "start": "node dist/server.js"
   },
   "dependencies": {
+    "@prisma/adapter-pg": "^7.10.0",
+    "@prisma/client": "^7.10.0",
     "cors": "latest",
     "dotenv": "latest",
-    "express": "latest"
+    "express": "latest",
+    "pg": "^8.23.0"
   },
   "devDependencies": {
     "@types/cors": "latest",
     "@types/express": "latest",
     "@types/node": "latest",
+    "@types/pg": "^8.23.1",
+    "prisma": "^7.10.0",
     "tsx": "latest",
     "typescript": "latest"
   }
 }
-
