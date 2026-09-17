@@ -1,0 +1,332 @@
+{"kind":"deck","id":"pr/dt4p43","name":"Deck"}
+{"kind":"layout","layoutId":"62bf718f-7d04-436b-8717-511d8548a985","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"709da801-b933-447a-81fc-2ff1dbd0e2d9","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/rsl28a","slide":1,"title":"SOFTWARE ENGINEERING PROJECT","textShapes":8}
+{"kind":"textbox","id":"sh/sf25ov2h","slide":1,"text":"SOFTWARE ENGINEERING PROJECT","textPreview":"SOFTWARE ENGINEERING PROJECT","textChars":28,"textLines":1,"bbox":[65,45,1470,64]}
+{"kind":"textbox","id":"sh/7etofqlw","slide":1,"text":"RouteMind","textPreview":"RouteMind","textChars":9,"textLines":1,"bbox":[65,849,400,22]}
+{"kind":"textbox","id":"sh/6dknmlkb","slide":1,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[1465,845,70,28]}
+{"kind":"textbox","id":"sh/h4v6l0jy","slide":1,"text":"RouteMind","textPreview":"RouteMind","textChars":9,"textLines":1,"bbox":[65,232,1470,142]}
+{"kind":"textbox","id":"sh/g325sv2d","slide":1,"text":"Logistics Route Optimization","textPreview":"Logistics Route Optimization","textChars":28,"textLines":1,"bbox":[72,412,1430,80]}
+{"kind":"textbox","id":"sh/fitojq1s","slide":1,"text":"Delivery planning for small businesses","textPreview":"Delivery planning for small businesses","textChars":38,"textLines":1,"bbox":[75,508,1390,49]}
+{"kind":"textbox","id":"sh/uhknqlkn","slide":1,"text":"Presented by","textPreview":"Presented by","textChars":12,"textLines":1,"bbox":[75,653,900,33]}
+{"kind":"textbox","id":"sh/x8r69g3u","slide":1,"text":"Keha Chopra     Suhani     Palavi     Ishita","textPreview":"Keha Chopra     Suhani     Palavi     Ishita","textChars":44,"textLines":1,"bbox":[75,708,1430,51]}
+{"kind":"notes","id":"nt/rsl28a","slide":1,"text":"RouteMind is a proposed web-based delivery planning system for small businesses. It plans routes for multiple orders and vehicles while considering load capacity, order priority and delivery time windows. This presentation covers the problem, context DFD, Level 1 decomposition, Level 2 route optimization, algorithm approach and system architecture."}
+{"kind":"slide","id":"sl/589n2p","slide":2,"title":"The delivery planning problem","textShapes":21}
+{"kind":"textbox","id":"sh/ytknuh43","slide":2,"text":"The delivery planning problem","textPreview":"The delivery planning problem","textChars":29,"textLines":1,"bbox":[65,45,1470,64]}
+{"kind":"textbox","id":"sh/lgb6pc3e","slide":2,"text":"A short route alone may still miss a delivery window or exceed a vehicle’s capacity.","textPreview":"A short route alone may still miss a delivery window or exceed a vehicle’s capacity.","textChars":84,"textLines":1,"bbox":[65,116,1450,42]}
+{"kind":"textbox","id":"sh/kv25w7mt","slide":2,"text":"RouteMind","textPreview":"RouteMind","textChars":9,"textLines":1,"bbox":[65,849,400,22]}
+{"kind":"textbox","id":"sh/bq94j25c","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1465,845,70,28]}
+{"kind":"textbox","id":"sh/ap0nqx4r","slide":2,"text":"What businesses need to manage","textPreview":"What businesses need to manage","textChars":30,"textLines":1,"bbox":[65,213,690,48]}
+{"kind":"textbox","id":"sh/xsr6lcni","slide":2,"text":"Multiple deliveries","textPreview":"Multiple deliveries","textChars":19,"textLines":1,"bbox":[65,298,650,37]}
+{"kind":"textbox","id":"sh/cri5s7mx","slide":2,"text":"A useful stop sequence for each driver.","textPreview":"A useful stop sequence for each driver.","textChars":39,"textLines":1,"bbox":[65,340,670,41]}
+{"kind":"textbox","id":"sh/nm94f25g","slide":2,"text":"Vehicle capacity","textPreview":"Vehicle capacity","textChars":16,"textLines":1,"bbox":[65,407,650,37]}
+{"kind":"textbox","id":"sh/2lgnmx4v","slide":2,"text":"Loads must fit the assigned vehicle.","textPreview":"Loads must fit the assigned vehicle.","textChars":36,"textLines":1,"bbox":[65,449,670,41]}
+{"kind":"textbox","id":"sh/onq5kfu5","slide":2,"text":"Priority and time windows","textPreview":"Priority and time windows","textChars":25,"textLines":1,"bbox":[65,516,650,37]}
+{"kind":"textbox","id":"sh/poz6tkvq","slide":2,"text":"Urgent orders and customer availability matter.","textPreview":"Urgent orders and customer availability matter.","textChars":47,"textLines":1,"bbox":[65,558,670,41]}
+{"kind":"textbox","id":"sh/2loni5cz","slide":2,"text":"Multiple drivers","textPreview":"Multiple drivers","textChars":16,"textLines":1,"bbox":[65,625,650,37]}
+{"kind":"textbox","id":"sh/3mxoradk","slide":2,"text":"Work must match available drivers and vehicles.","textPreview":"Work must match available drivers and vehicles.","textChars":47,"textLines":1,"bbox":[65,667,670,41]}
+{"kind":"textbox","id":"sh/gj65gvu9","slide":2,"text":"RouteMind’s proposed solution","textPreview":"RouteMind’s proposed solution","textChars":29,"textLines":1,"bbox":[825,213,690,48]}
+{"kind":"textbox","id":"sh/1kf6p0vu","slide":2,"text":"INPUT","textPreview":"INPUT","textChars":5,"textLines":1,"bbox":[825,300,170,31]}
+{"kind":"textbox","id":"sh/exone5c3","slide":2,"text":"Orders, locations, vehicles, drivers,\ncapacity, priority and time limits","textPreview":"Orders, locations, vehicles, drivers, | capacity, priority and time limits","textChars":72,"textLines":2,"bbox":[825,341,690,82]}
+{"kind":"textbox","id":"sh/fix4nado","slide":2,"text":"PLANNING","textPreview":"PLANNING","textChars":8,"textLines":1,"bbox":[825,464,200,31]}
+{"kind":"textbox","id":"sh/0fa5szud","slide":2,"text":"Validate inputs and find a feasible\nroute plan with a lower travel cost.","textPreview":"Validate inputs and find a feasible | route plan with a lower travel cost.","textChars":72,"textLines":2,"bbox":[825,505,680,83]}
+{"kind":"textbox","id":"sh/lgj614by","slide":2,"text":"OUTPUT","textPreview":"OUTPUT","textChars":6,"textLines":1,"bbox":[825,630,170,31]}
+{"kind":"textbox","id":"sh/9cf6l432","slide":2,"text":"Driver routes, estimated arrival times,\ndelivery progress and analytics","textPreview":"Driver routes, estimated arrival times, | delivery progress and analytics","textChars":71,"textLines":2,"bbox":[825,671,690,83]}
+{"kind":"textbox","id":"sh/8b65czmh","slide":2,"text":"When an order changes, RouteMind recalculates the remaining deliveries and informs the affected driver.","textPreview":"When an order changes, RouteMind recalculates the remaining deliveries and informs the affected driver.","textChars":103,"textLines":1,"bbox":[65,786,1470,46]}
+{"kind":"notes","id":"nt/589n2p","slide":2,"text":"This is a proposal, not a claim of measured savings. The system accepts delivery addresses, order load, priority, time windows and service time, plus vehicle capacities and driver availability. It validates the inputs, prepares routes and monitors delivery updates. Capacity and time windows can be treated as hard limits. Priority helps order feasible deliveries. Added, cancelled or delayed orders trigger replanning of unfinished stops while preserving completed deliveries. Infeasible orders are flagged for the business to resolve."}
+{"kind":"slide","id":"sl/2sg0l8","slide":3,"title":"DFD Level 0: system context","textShapes":18}
+{"kind":"textbox","id":"sh/69ov29c3","slide":3,"text":"DFD Level 0: system context","textPreview":"DFD Level 0: system context","textChars":27,"textLines":1,"bbox":[65,45,1470,64]}
+{"kind":"textbox","id":"sh/twfexovu","slide":3,"text":"One system process exchanges data with four external entities.","textPreview":"One system process exchanges data with four external entities.","textChars":62,"textLines":1,"bbox":[65,116,1450,42]}
+{"kind":"textbox","id":"sh/sb6d4ju9","slide":3,"text":"RouteMind","textPreview":"RouteMind","textChars":9,"textLines":1,"bbox":[65,849,400,22]}
+{"kind":"textbox","id":"sh/j6dcrudc","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1465,845,70,28]}
+{"kind":"textbox","id":"sh/i54vy9c7","slide":3,"text":"0\nRouteMind","textPreview":"0 | RouteMind","textChars":11,"textLines":2,"bbox":[585,348,430,216]}
+{"kind":"textbox","id":"sh/58vet4vi","slide":3,"text":"Business / Admin","textPreview":"Business / Admin","textChars":16,"textLines":1,"bbox":[65,225,310,105]}
+{"kind":"textbox","id":"sh/k7md0zux","slide":3,"text":"Driver","textPreview":"Driver","textChars":6,"textLines":1,"bbox":[65,635,310,105]}
+{"kind":"textbox","id":"sh/v2dcnudg","slide":3,"text":"Customer","textPreview":"Customer","textChars":8,"textLines":1,"bbox":[1220,225,310,105]}
+{"kind":"textbox","id":"sh/a14vupcv","slide":3,"text":"Map / Routing API","textPreview":"Map / Routing API","textChars":17,"textLines":1,"bbox":[1220,635,310,105]}
+{"kind":"shape","id":"sh/knu1w3yx","slide":3,"bbox":[375,277,0.1,0.1]}
+{"kind":"shape","id":"sh/lo32p8fi","slide":3,"bbox":[623,374,0.1,0.1]}
+{"kind":"shape","id":"sh/ylcjutg7","slide":3,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/zmlknyxc","slide":3,"text":"Orders, fleet details,\nconstraints, report requests","textPreview":"Orders, fleet details, | constraints, report requests","textChars":51,"textLines":2,"bbox":[405,223,370,73]}
+{"kind":"shape","id":"sh/cju1sjy1","slide":3,"bbox":[592,426,0.1,0.1]}
+{"kind":"shape","id":"sh/xk3ilofm","slide":3,"bbox":[375,330,0.1,0.1]}
+{"kind":"shape","id":"sh/qhcjq9gv","slide":3,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/bil0jexg","slide":3,"text":"Route plans, analytics,\nexceptions","textPreview":"Route plans, analytics, | exceptions","textChars":34,"textLines":2,"bbox":[65,376,435,73]}
+{"kind":"shape","id":"sh/wfe14ne5","slide":3,"bbox":[375,659,0.1,0.1]}
+{"kind":"shape","id":"sh/hg72xsfq","slide":3,"bbox":[617,524,0.1,0.1]}
+{"kind":"shape","id":"sh/5w32h87u","slide":3,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/4bu1on69","slide":3,"text":"Delivery status,\ncurrent location","textPreview":"Delivery status, | current location","textChars":33,"textLines":2,"bbox":[65,535,325,68]}
+{"kind":"shape","id":"sh/3a10fipo","slide":3,"bbox":[690,562,0.1,0.1]}
+{"kind":"shape","id":"sh/i9sjmdoj","slide":3,"bbox":[375,723,0.1,0.1]}
+{"kind":"shape","id":"sh/h8jid87y","slide":3,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/g7a1k36d","slide":3,"text":"Assigned route,\nroute updates","textPreview":"Assigned route, | route updates","textChars":29,"textLines":2,"bbox":[445,696,300,68]}
+{"kind":"shape","id":"sh/v610byps","slide":3,"bbox":[1220,273,0.1,0.1]}
+{"kind":"shape","id":"sh/u5sjit87","slide":3,"bbox":[986,382,0.1,0.1]}
+{"kind":"shape","id":"sh/t4ji9o7m","slide":3,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/83q1g3q1","slide":3,"text":"Delivery preferences,\naddress corrections","textPreview":"Delivery preferences, | address corrections","textChars":41,"textLines":2,"bbox":[900,218,315,74]}
+{"kind":"shape","id":"sh/y9ozap4z","slide":3,"bbox":[1011,434,0.1,0.1]}
+{"kind":"shape","id":"sh/zaxgju5k","slide":3,"bbox":[1220,330,0.1,0.1]}
+{"kind":"shape","id":"sh/kb6hczm5","slide":3,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/lczyl4nq","slide":3,"text":"Estimated arrival,\ndelivery status","textPreview":"Estimated arrival, | delivery status","textChars":34,"textLines":2,"bbox":[1170,385,350,74]}
+{"kind":"shape","id":"sh/alof6po3","slide":3,"bbox":[1003,496,0.1,0.1]}
+{"kind":"shape","id":"sh/b6xgfu5o","slide":3,"bbox":[1220,657,0.1,0.1]}
+{"kind":"shape","id":"sh/c76x8z6t","slide":3,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/x8fyh4ne","slide":3,"text":"Coordinates,\ndistance / route request","textPreview":"Coordinates, | distance / route request","textChars":37,"textLines":2,"bbox":[1172,521,360,78]}
+{"kind":"shape","id":"sh/2h4f25or","slide":3,"bbox":[1220,717,0.1,0.1]}
+{"kind":"shape","id":"sh/nidgba5c","slide":3,"bbox":[962,554,0.1,0.1]}
+{"kind":"shape","id":"sh/fuxcnq98","slide":3,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/etovel8n","slide":3,"text":"Locations, distances,\nestimated travel times","textPreview":"Locations, distances, | estimated travel times","textChars":44,"textLines":2,"bbox":[858,701,385,72]}
+{"kind":"textbox","id":"sh/1wfupgry","slide":3,"text":"Arrows represent information exchanged. The system’s internal modules are shown on the next slide.","textPreview":"Arrows represent information exchanged. The system’s internal modules are shown on the next slide.","textChars":98,"textLines":1,"bbox":[65,786,1470,46]}
+{"kind":"notes","id":"nt/2sg0l8","slide":3,"text":"Context DFD: Business/Admin submits orders, fleet details, planning constraints and analytics requests. RouteMind returns route plans, analytics and exceptions. Driver sends current location and delivery events and receives assigned routes and changes. Customer supplies delivery preferences or address corrections and receives an estimated arrival time and delivery status. The customer input is an assumed proposed feature to make the customer interaction explicit. RouteMind queries a Map/Routing API and receives location, distance and travel-time data. Rectangles denote external entities and the ellipse denotes the complete system."}
+{"kind":"slide","id":"sl/kb13wz","slide":4,"title":"DFD Level 1: six connected modules","textShapes":48}
+{"kind":"textbox","id":"sh/6dwripc7","slide":4,"text":"DFD Level 1: six connected modules","textPreview":"DFD Level 1: six connected modules","textChars":34,"textLines":1,"bbox":[65,45,1470,64]}
+{"kind":"textbox","id":"sh/tgnqd4vy","slide":4,"text":"The stores preserve operational data and the results of every optimization run.","textPreview":"The stores preserve operational data and the results of every optimization run.","textChars":79,"textLines":1,"bbox":[65,116,1450,42]}
+{"kind":"textbox","id":"sh/sfe9kzud","slide":4,"text":"RouteMind","textPreview":"RouteMind","textChars":9,"textLines":1,"bbox":[65,849,400,22]}
+{"kind":"textbox","id":"sh/fip8fed4","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1465,845,70,28]}
+{"kind":"textbox","id":"sh/ehwrm9cj","slide":4,"text":"EXTERNAL DATA","textPreview":"EXTERNAL DATA","textChars":13,"textLines":1,"bbox":[65,184,430,28]}
+{"kind":"textbox","id":"sh/147qhovu","slide":4,"text":"PROCESS","textPreview":"PROCESS","textChars":7,"textLines":1,"bbox":[597,184,380,28]}
+{"kind":"textbox","id":"sh/g3y9ojup","slide":4,"text":"PRIMARY DATA STORES","textPreview":"PRIMARY DATA STORES","textChars":19,"textLines":1,"bbox":[1190,184,350,28]}
+{"kind":"textbox","id":"sh/vml83adk","slide":4,"text":"Business / Customer","textPreview":"Business / Customer","textChars":19,"textLines":1,"bbox":[65,237,280,57]}
+{"kind":"textbox","id":"sh/ulc7a5cf","slide":4,"text":"1  Manage Orders","textPreview":"1  Manage Orders","textChars":16,"textLines":1,"bbox":[607,237,380,57]}
+{"kind":"textbox","id":"sh/cn6t8ze5","slide":4,"text":"D2  Orders","textPreview":"D2  Orders","textChars":10,"textLines":1,"bbox":[1237,237,300,57]}
+{"kind":"shape","id":"sh/xofu14va","slide":4,"bbox":[1254,237,0.01,57]}
+{"kind":"shape","id":"sh/a1ob6pwz","slide":4,"bbox":[345,253,0.1,0.1]}
+{"kind":"shape","id":"sh/bmxczudk","slide":4,"bbox":[607,253,0.1,0.1]}
+{"kind":"shape","id":"sh/krqdcze1","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/lszu54vm","slide":4,"text":"Orders / preferences","textPreview":"Orders / preferences","textChars":20,"textLines":1,"bbox":[354,225,252,26]}
+{"kind":"shape","id":"sh/ypova9wv","slide":4,"bbox":[607,285,0.1,0.1]}
+{"kind":"shape","id":"sh/jqxc3edg","slide":4,"bbox":[345,285,0.1,0.1]}
+{"kind":"shape","id":"sh/0vmt0fex","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/1wvutkv2","slide":4,"text":"Order details / exceptions","textPreview":"Order details / exceptions","textChars":26,"textLines":1,"bbox":[352,286,260,26]}
+{"kind":"shape","id":"sh/hg3ihc3u","slide":4,"bbox":[987,253,0.1,0.1]}
+{"kind":"shape","id":"sh/gfu18729","slide":4,"bbox":[1237,253,0.1,0.1]}
+{"kind":"shape","id":"sh/vel0f2lo","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/udcj6xk3","slide":4,"text":"Stored records","textPreview":"Stored records","textChars":14,"textLines":1,"bbox":[1012,225,215,25]}
+{"kind":"shape","id":"sh/54nilw36","slide":4,"bbox":[1237,285,0.1,0.1]}
+{"kind":"shape","id":"sh/4je1cr2l","slide":4,"bbox":[987,285,0.1,0.1]}
+{"kind":"shape","id":"sh/3i50jml0","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/ihcjahkf","slide":4,"text":"Retrieved records","textPreview":"Retrieved records","textChars":17,"textLines":1,"bbox":[1007,286,228,26]}
+{"kind":"textbox","id":"sh/d8n2pw32","slide":4,"text":"Business / Admin","textPreview":"Business / Admin","textChars":16,"textLines":1,"bbox":[65,324,280,57]}
+{"kind":"textbox","id":"sh/s7e1gr2h","slide":4,"text":"2  Manage Drivers & Vehicles","textPreview":"2  Manage Drivers & Vehicles","textChars":28,"textLines":1,"bbox":[607,324,380,57]}
+{"kind":"textbox","id":"sh/at8fat0z","slide":4,"text":"D1  Users/Businesses\nD3  Vehicles     D4  Drivers","textPreview":"D1  Users/Businesses | D3  Vehicles     D4  Drivers","textChars":49,"textLines":2,"bbox":[1237,324,300,57]}
+{"kind":"shape","id":"sh/behgjy1k","slide":4,"bbox":[1254,324,0.01,57]}
+{"kind":"shape","id":"sh/wfqxc3i5","slide":4,"bbox":[345,340,0.1,0.1]}
+{"kind":"shape","id":"sh/xgzyl8jq","slide":4,"bbox":[607,340,0.1,0.1]}
+{"kind":"shape","id":"sh/yh8fet0v","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/jihgny1g","slide":4,"text":"Fleet / account details","textPreview":"Fleet / account details","textChars":23,"textLines":1,"bbox":[354,312,252,26]}
+{"kind":"shape","id":"sh/kjahg3i1","slide":4,"bbox":[607,372,0.1,0.1]}
+{"kind":"shape","id":"sh/lkjyp8jm","slide":4,"bbox":[345,372,0.1,0.1]}
+{"kind":"shape","id":"sh/6lszid07","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/7m1gri1s","slide":4,"text":"Driver and vehicle records","textPreview":"Driver and vehicle records","textChars":26,"textLines":1,"bbox":[352,373,260,26]}
+{"kind":"shape","id":"sh/f2xgbitw","slide":4,"bbox":[987,340,0.1,0.1]}
+{"kind":"shape","id":"sh/u1of2dsb","slide":4,"bbox":[1237,340,0.1,0.1]}
+{"kind":"shape","id":"sh/h4fyd8b2","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/g36x4nah","slide":4,"text":"Stored records","textPreview":"Stored records","textChars":14,"textLines":1,"bbox":[1012,312,215,25]}
+{"kind":"shape","id":"sh/36hgfi9s","slide":4,"bbox":[1237,372,0.1,0.1]}
+{"kind":"shape","id":"sh/25of6ds7","slide":4,"bbox":[987,372,0.1,0.1]}
+{"kind":"shape","id":"sh/p8zyhsry","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/47qx8nad","slide":4,"text":"Retrieved records","textPreview":"Retrieved records","textChars":17,"textLines":1,"bbox":[1007,373,228,26]}
+{"kind":"textbox","id":"sh/jadg3yto","slide":4,"text":"Business / Admin","textPreview":"Business / Admin","textChars":16,"textLines":1,"bbox":[65,411,280,57]}
+{"kind":"textbox","id":"sh/i94futs3","slide":4,"text":"3  Validate Constraints","textPreview":"3  Validate Constraints","textChars":23,"textLines":1,"bbox":[607,411,380,57]}
+{"kind":"textbox","id":"sh/of2d4zq1","slide":4,"text":"D2  Orders     D3  Vehicles\nD4  Drivers","textPreview":"D2  Orders     D3  Vehicles | D4  Drivers","textChars":39,"textLines":2,"bbox":[1237,411,300,57]}
+{"kind":"shape","id":"sh/9gbuxkrm","slide":4,"bbox":[1254,411,0.01,57]}
+{"kind":"shape","id":"sh/md0v2p8v","slide":4,"bbox":[345,427,0.1,0.1]}
+{"kind":"shape","id":"sh/ne9cvu9g","slide":4,"bbox":[607,427,0.1,0.1]}
+{"kind":"shape","id":"sh/0bid0fqp","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/1crutkra","slide":4,"text":"Planning constraints","textPreview":"Planning constraints","textChars":20,"textLines":1,"bbox":[354,399,252,26]}
+{"kind":"shape","id":"sh/e90vy58z","slide":4,"bbox":[607,459,0.1,0.1]}
+{"kind":"shape","id":"sh/za9cra9k","slide":4,"bbox":[345,459,0.1,0.1]}
+{"kind":"shape","id":"sh/k7mdcjq9","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/58ve547u","slide":4,"text":"Validation issues","textPreview":"Validation issues","textChars":17,"textLines":1,"bbox":[352,460,260,26]}
+{"kind":"shape","id":"sh/ts7m9kvm","slide":4,"bbox":[1237,459,0.1,0.1]}
+{"kind":"shape","id":"sh/sryl0fe1","slide":4,"bbox":[987,459,0.1,0.1]}
+{"kind":"shape","id":"sh/7qp47adg","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/6pg3y5wv","slide":4,"text":"Retrieved records","textPreview":"Retrieved records","textChars":17,"textLines":1,"bbox":[1007,460,228,26]}
+{"kind":"textbox","id":"sh/lo7m50vq","slide":4,"text":"Map / Routing API","textPreview":"Map / Routing API","textChars":17,"textLines":1,"bbox":[65,498,280,57]}
+{"kind":"textbox","id":"sh/knelwve5","slide":4,"text":"4  Optimize Routes","textPreview":"4  Optimize Routes","textChars":18,"textLines":1,"bbox":[607,498,380,57]}
+{"kind":"textbox","id":"sh/jm543qdk","slide":4,"text":"D5  Routes     D6  Locations\nD8  Optimization Runs","textPreview":"D5  Routes     D6  Locations | D8  Optimization Runs","textChars":50,"textLines":2,"bbox":[1237,498,300,57]}
+{"kind":"shape","id":"sh/ylw3u5wz","slide":4,"bbox":[1254,498,0.01,57]}
+{"kind":"shape","id":"sh/xknm10fe","slide":4,"bbox":[345,514,0.1,0.1]}
+{"kind":"shape","id":"sh/wjelsvet","slide":4,"bbox":[607,514,0.1,0.1]}
+{"kind":"shape","id":"sh/mpcj21cr","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/nql0b6tc","slide":4,"text":"Distances / travel times","textPreview":"Distances / travel times","textChars":24,"textLines":1,"bbox":[354,486,252,26]}
+{"kind":"shape","id":"sh/oru14rux","slide":4,"bbox":[607,546,0.1,0.1]}
+{"kind":"shape","id":"sh/9s3idwbi","slide":4,"bbox":[345,546,0.1,0.1]}
+{"kind":"shape","id":"sh/e1sjyhcf","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/z2107md0","slide":4,"text":"Location / distance query","textPreview":"Location / distance query","textChars":25,"textLines":1,"bbox":[352,547,260,26]}
+{"kind":"shape","id":"sh/03a10rul","slide":4,"bbox":[987,514,0.1,0.1]}
+{"kind":"shape","id":"sh/1oji9wb6","slide":4,"bbox":[1237,514,0.1,0.1]}
+{"kind":"shape","id":"sh/qxsjuhcj","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/ry103md4","slide":4,"text":"Stored records","textPreview":"Stored records","textChars":14,"textLines":1,"bbox":[1012,486,215,25]}
+{"kind":"shape","id":"sh/fmlcru9w","slide":4,"bbox":[1237,546,0.1,0.1]}
+{"kind":"shape","id":"sh/ulcbipsb","slide":4,"bbox":[987,546,0.1,0.1]}
+{"kind":"shape","id":"sh/ho3utkr2","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/gnutkfah","slide":4,"text":"Retrieved records","textPreview":"Retrieved records","textChars":17,"textLines":1,"bbox":[1007,547,228,26]}
+{"kind":"textbox","id":"sh/7ylcna90","slide":4,"text":"Driver / Customer","textPreview":"Driver / Customer","textChars":17,"textLines":1,"bbox":[65,585,280,57]}
+{"kind":"textbox","id":"sh/6xsbe5sf","slide":4,"text":"5  Track Deliveries","textPreview":"5  Track Deliveries","textChars":19,"textLines":1,"bbox":[607,585,380,57]}
+{"kind":"textbox","id":"sh/tk3upkr6","slide":4,"text":"D5  Routes     D6  Locations\nD7  Delivery Events","textPreview":"D5  Routes     D6  Locations | D7  Delivery Events","textChars":48,"textLines":2,"bbox":[1237,585,300,57]}
+{"kind":"shape","id":"sh/sjutgfal","slide":4,"bbox":[1254,585,0.01,57]}
+{"kind":"shape","id":"sh/ru5cze94","slide":4,"bbox":[345,601,0.1,0.1]}
+{"kind":"shape","id":"sh/qtwbq9sj","slide":4,"bbox":[607,601,0.1,0.1]}
+{"kind":"shape","id":"sh/8zq9kbq1","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/90zqdw7m","slide":4,"text":"Location / delivery events","textPreview":"Location / delivery events","textChars":26,"textLines":1,"bbox":[354,573,252,26]}
+{"kind":"shape","id":"sh/mxori18b","slide":4,"bbox":[607,633,0.1,0.1]}
+{"kind":"shape","id":"sh/nyx8b6pg","slide":4,"bbox":[345,633,0.1,0.1]}
+{"kind":"shape","id":"sh/w3q9obqd","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/x4zqhg7y","slide":4,"text":"Route / ETA / status","textPreview":"Route / ETA / status","textChars":20,"textLines":1,"bbox":[352,634,260,26]}
+{"kind":"shape","id":"sh/a18rm187","slide":4,"bbox":[987,601,0.1,0.1]}
+{"kind":"shape","id":"sh/v2h8f6ps","slide":4,"bbox":[1237,601,0.1,0.1]}
+{"kind":"shape","id":"sh/kra9svq9","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/5sjalg7u","slide":4,"text":"Stored records","textPreview":"Stored records","textChars":14,"textLines":1,"bbox":[1012,573,215,25]}
+{"kind":"shape","id":"sh/atsrm5kv","slide":4,"bbox":[1237,633,0.1,0.1]}
+{"kind":"shape","id":"sh/bu18falg","slide":4,"bbox":[987,633,0.1,0.1]}
+{"kind":"shape","id":"sh/cva9of21","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/xw3qhk3m","slide":4,"text":"Retrieved records","textPreview":"Retrieved records","textChars":17,"textLines":1,"bbox":[1007,634,228,26]}
+{"kind":"textbox","id":"sh/yxcrqpk7","slide":4,"text":"Business / Admin","textPreview":"Business / Admin","textChars":16,"textLines":1,"bbox":[65,672,280,57]}
+{"kind":"textbox","id":"sh/zyl8julc","slide":4,"text":"6  Generate Analytics","textPreview":"6  Generate Analytics","textChars":21,"textLines":1,"bbox":[607,672,380,57]}
+{"kind":"textbox","id":"sh/kzu9sz2x","slide":4,"text":"D5  Routes     D7  Events\nD8  Optimization Runs","textPreview":"D5  Routes     D7  Events | D8  Optimization Runs","textChars":47,"textLines":2,"bbox":[1237,672,300,57]}
+{"kind":"shape","id":"sh/l03ql43i","slide":4,"bbox":[1254,672,0.01,57]}
+{"kind":"shape","id":"sh/mlcrupk3","slide":4,"bbox":[345,688,0.1,0.1]}
+{"kind":"shape","id":"sh/7ml8nulo","slide":4,"bbox":[607,688,0.1,0.1]}
+{"kind":"shape","id":"sh/hg7udonq","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/gfytk3m5","slide":4,"text":"Report request","textPreview":"Report request","textChars":14,"textLines":1,"bbox":[354,660,252,26]}
+{"kind":"shape","id":"sh/vu5sby5k","slide":4,"bbox":[607,720,0.1,0.1]}
+{"kind":"shape","id":"sh/utwbit4f","slide":4,"bbox":[345,720,0.1,0.1]}
+{"kind":"shape","id":"sh/5k7uh8n2","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/4jyto3mh","slide":4,"text":"Delivery analytics","textPreview":"Delivery analytics","textChars":18,"textLines":1,"bbox":[352,721,260,26]}
+{"kind":"shape","id":"sh/3ipcfy5w","slide":4,"bbox":[1237,720,0.1,0.1]}
+{"kind":"shape","id":"sh/ihgbmt4b","slide":4,"bbox":[987,720,0.1,0.1]}
+{"kind":"shape","id":"sh/doruls3y","slide":4,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/snitsnmd","slide":4,"text":"Retrieved records","textPreview":"Retrieved records","textChars":17,"textLines":1,"bbox":[1007,721,228,26]}
+{"kind":"textbox","id":"sh/c3a54by1","slide":4,"text":"Internal flows: 1 + 2 supply delivery data to 3. 3 sends valid inputs to 4. 4 sends route plans to 5.\n5 sends changed delivery data to 4 for replanning. 6 reads route, event and optimization records.","textPreview":"Internal flows: 1 + 2 supply delivery data to 3. 3 sends valid inputs to 4. 4 sends route plans to 5. | 5 sends changed delivery data to ...","textChars":199,"textLines":2,"bbox":[65,774,1470,59]}
+{"kind":"notes","id":"nt/kb13wz","slide":4,"text":"Level 1 decomposition: 1 manages orders, addresses and preferences in D2. 2 manages business records in D1, vehicle records in D3 and driver records in D4. 3 validates orders against capacities, availability and planning constraints, reading D2/D3/D4 and returning input problems to the business. 4 receives validated inputs from 3, uses map data and D6, stores route plans in D5 and run metrics or failures in D8, and sends plans to 5 and the Business. 5 receives driver locations and delivery events, updates D6/D7 and route progress in D5, sends ETA/status to Customer and route updates to Driver, and sends changed delivery data to 4 for replanning. 6 reads D5/D7/D8 to produce requested analytics. Repeated store labels refer to the same stores. The internal flows are explicitly stated below the diagram to avoid overlapping lines. Customer inputs are handled by 1; the combined actor label in 5 does not imply that customers send driver location events."}
+{"kind":"slide","id":"sl/eiffqf","slide":5,"title":"DFD Level 2: Optimize Routes","textShapes":32}
+{"kind":"textbox","id":"sh/t4b2lkna","slide":5,"text":"DFD Level 2: Optimize Routes","textPreview":"DFD Level 2: Optimize Routes","textChars":28,"textLines":1,"bbox":[65,45,1470,64]}
+{"kind":"textbox","id":"sh/610jq54z","slide":5,"text":"Process 4 transforms validated delivery data into a feasible route plan and run metrics.","textPreview":"Process 4 transforms validated delivery data into a feasible route plan and run metrics.","textChars":88,"textLines":1,"bbox":[65,116,1450,42]}
+{"kind":"textbox","id":"sh/72tkja5k","slide":5,"text":"RouteMind","textPreview":"RouteMind","textChars":9,"textLines":1,"bbox":[65,849,400,22]}
+{"kind":"textbox","id":"sh/kfi1ovmt","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1465,845,70,28]}
+{"kind":"textbox","id":"sh/5grih0ne","slide":5,"text":"D2  Orders","textPreview":"D2  Orders","textChars":10,"textLines":1,"bbox":[65,191,310,54]}
+{"kind":"shape","id":"sh/id0jm54n","slide":5,"bbox":[82,191,0.01,54]}
+{"kind":"textbox","id":"sh/je90fq58","slide":5,"text":"D3  Vehicles / D4  Drivers","textPreview":"D3  Vehicles / D4  Drivers","textChars":26,"textLines":1,"bbox":[446,191,310,54]}
+{"kind":"shape","id":"sh/4bm10zmx","slide":5,"bbox":[463,191,0.01,54]}
+{"kind":"textbox","id":"sh/pcv2t4ni","slide":5,"text":"D6  Locations","textPreview":"D6  Locations","textChars":13,"textLines":1,"bbox":[825,191,310,54]}
+{"kind":"shape","id":"sh/l4vy5cze","slide":5,"bbox":[842,191,0.01,54]}
+{"kind":"textbox","id":"sh/k32hc7yt","slide":5,"text":"Map / Routing API","textPreview":"Map / Routing API","textChars":17,"textLines":1,"bbox":[1205,191,330,54]}
+{"kind":"textbox","id":"sh/z2tg32h8","slide":5,"text":"4.1  Receive orders","textPreview":"4.1  Receive orders","textChars":19,"textLines":1,"bbox":[65,342,310,90]}
+{"kind":"textbox","id":"sh/yhkzahg3","slide":5,"text":"4.2  Retrieve constraints","textPreview":"4.2  Retrieve constraints","textChars":25,"textLines":1,"bbox":[446,342,310,90]}
+{"kind":"textbox","id":"sh/xgby1czi","slide":5,"text":"4.3  Get distances","textPreview":"4.3  Get distances","textChars":18,"textLines":1,"bbox":[825,342,310,90]}
+{"kind":"textbox","id":"sh/cf2h87yx","slide":5,"text":"4.4  Generate initial route","textPreview":"4.4  Generate initial route","textChars":27,"textLines":1,"bbox":[1205,342,330,90]}
+{"kind":"shape","id":"sh/betgz2hc","slide":5,"bbox":[375,388,0.1,0.1]}
+{"kind":"shape","id":"sh/adkz6xgr","slide":5,"bbox":[446,388,0.1,0.1]}
+{"kind":"shape","id":"sh/hcfidwfm","slide":5,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/wbmhkry1","slide":5,"text":"Order\nset","textPreview":"Order | set","textChars":9,"textLines":2,"bbox":[366,282,90,55]}
+{"kind":"shape","id":"sh/0retwzap","slide":5,"bbox":[756,388,0.1,0.1]}
+{"kind":"shape","id":"sh/1sna54ra","slide":5,"bbox":[825,388,0.1,0.1]}
+{"kind":"shape","id":"sh/epwbupsj","slide":5,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/fq5s3u94","slide":5,"text":"Delivery\ninputs","textPreview":"Delivery | inputs","textChars":15,"textLines":2,"bbox":[747,282,90,55]}
+{"kind":"shape","id":"sh/sne9szad","slide":5,"bbox":[1135,388,0.1,0.1]}
+{"kind":"shape","id":"sh/dona14ry","slide":5,"bbox":[1205,388,0.1,0.1]}
+{"kind":"shape","id":"sh/qlwrqps7","slide":5,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/rm5szu9s","slide":5,"text":"Matrix","textPreview":"Matrix","textChars":6,"textLines":1,"bbox":[1126,385,90,55]}
+{"kind":"shape","id":"sh/4zu9ofah","slide":5,"bbox":[220,245,0.1,0.1]}
+{"kind":"shape","id":"sh/5k3axkr2","slide":5,"bbox":[220,342,0.1,0.1]}
+{"kind":"shape","id":"sh/7uls7ado","slide":5,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/mtsbe5c3","slide":5,"text":"Order data","textPreview":"Order data","textChars":10,"textLines":1,"bbox":[70,266,160,29]}
+{"kind":"shape","id":"sh/9w3u9kvu","slide":5,"bbox":[601,245,0.1,0.1]}
+{"kind":"shape","id":"sh/8vutgfu9","slide":5,"bbox":[601,342,0.1,0.1]}
+{"kind":"shape","id":"sh/vylcbud0","slide":5,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/uxcbipcf","slide":5,"text":"Capacity / time limits","textPreview":"Capacity / time limits","textChars":22,"textLines":1,"bbox":[430,264,285,31]}
+{"kind":"shape","id":"sh/hk3udkvq","slide":5,"bbox":[980,245,0.1,0.1]}
+{"kind":"shape","id":"sh/wjutkfu5","slide":5,"bbox":[980,342,0.1,0.1]}
+{"kind":"shape","id":"sh/3m5cfudw","slide":5,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/ilcbmpcb","slide":5,"text":"Coordinates","textPreview":"Coordinates","textChars":11,"textLines":1,"bbox":[830,264,180,29]}
+{"kind":"shape","id":"sh/2pkvidkn","slide":5,"bbox":[1240,245,0.1,0.1]}
+{"kind":"shape","id":"sh/3qdwby18","slide":5,"bbox":[1080,342,0.1,0.1]}
+{"kind":"shape","id":"sh/ormdk32t","slide":5,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/psved8jy","slide":5,"bbox":[1040,342,0.1,0.1]}
+{"kind":"shape","id":"sh/qt4vmdkj","slide":5,"bbox":[1200,245,0.1,0.1]}
+{"kind":"shape","id":"sh/budwfi14","slide":5,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/cvmdon2p","slide":5,"text":"Queries / distance data","textPreview":"Queries / distance data","textChars":23,"textLines":1,"bbox":[1210,264,325,33]}
+{"kind":"textbox","id":"sh/dwvehsja","slide":5,"text":"4.8  Store route","textPreview":"4.8  Store route","textChars":16,"textLines":1,"bbox":[65,578,310,90]}
+{"kind":"textbox","id":"sh/6x0va9kf","slide":5,"text":"4.7  Calculate metrics","textPreview":"4.7  Calculate metrics","textChars":22,"textLines":1,"bbox":[446,578,310,90]}
+{"kind":"textbox","id":"sh/rytc3el0","slide":5,"text":"4.6  Check constraints","textPreview":"4.6  Check constraints","textChars":22,"textLines":1,"bbox":[825,578,310,90]}
+{"kind":"textbox","id":"sh/94jq5g7u","slide":5,"text":"4.5  Apply optimization","textPreview":"4.5  Apply optimization","textChars":23,"textLines":1,"bbox":[1205,578,330,90]}
+{"kind":"shape","id":"sh/83apwbq9","slide":5,"bbox":[1370,432,0.1,0.1]}
+{"kind":"shape","id":"sh/721836po","slide":5,"bbox":[1370,578,0.1,0.1]}
+{"kind":"shape","id":"sh/m187u183","slide":5,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/hsjq907q","slide":5,"text":"Initial route","textPreview":"Initial route","textChars":13,"textLines":1,"bbox":[1390,477,145,35]}
+{"kind":"shape","id":"sh/wrap0vq5","slide":5,"bbox":[1205,623,0.1,0.1]}
+{"kind":"shape","id":"sh/vq187qpk","slide":5,"bbox":[1135,623,0.1,0.1]}
+{"kind":"shape","id":"sh/u5s7yl8z","slide":5,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/xwz6xw7m","slide":5,"text":"Candidate\nroute","textPreview":"Candidate | route","textChars":15,"textLines":2,"bbox":[1122,531,95,48]}
+{"kind":"shape","id":"sh/cvqporq1","slide":5,"bbox":[825,623,0.1,0.1]}
+{"kind":"shape","id":"sh/ofap4ryx","slide":5,"bbox":[756,623,0.1,0.1]}
+{"kind":"shape","id":"sh/pg3qdwzi","slide":5,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/2ds721gr","slide":5,"text":"Feasible\nplan","textPreview":"Feasible | plan","textChars":13,"textLines":2,"bbox":[742,531,95,48]}
+{"kind":"shape","id":"sh/3e18b6hc","slide":5,"bbox":[446,623,0.1,0.1]}
+{"kind":"shape","id":"sh/cjup8byt","slide":5,"bbox":[375,623,0.1,0.1]}
+{"kind":"shape","id":"sh/dk3qhgfe","slide":5,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/qhc761gn","slide":5,"text":"Plan +\nmetrics","textPreview":"Plan + | metrics","textChars":14,"textLines":2,"bbox":[363,531,95,48]}
+{"kind":"shape","id":"sh/bil8f6h8","slide":5,"bbox":[1070,578,0.1,0.1]}
+{"kind":"shape","id":"sh/07epcby5","slide":5,"bbox":[1070,483,0.1,0.1]}
+{"kind":"shape","id":"sh/l8nqlgfq","slide":5,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/v2psbahs","slide":5,"bbox":[1070,483,0.1,0.1]}
+{"kind":"shape","id":"sh/a1gbip07","slide":5,"bbox":[1280,483,0.1,0.1]}
+{"kind":"shape","id":"sh/x47adkzy","slide":5,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/w3ytkfid","slide":5,"bbox":[1280,483,0.1,0.1]}
+{"kind":"shape","id":"sh/ne5s7a1g","slide":5,"bbox":[1280,578,0.1,0.1]}
+{"kind":"shape","id":"sh/mdwre50v","slide":5,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/907a9kjm","slide":5,"text":"Violations: revise candidate","textPreview":"Violations: revise candidate","textChars":28,"textLines":1,"bbox":[983,446,355,30]}
+{"kind":"shape","id":"sh/8fytgfi1","slide":5,"bbox":[220,668,0.1,0.1]}
+{"kind":"shape","id":"sh/ra9sjuh0","slide":5,"bbox":[220,730,0.1,0.1]}
+{"kind":"shape","id":"sh/690bq90f","slide":5,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/25wz21k7","slide":5,"text":"D5  Routes","textPreview":"D5  Routes","textChars":10,"textLines":1,"bbox":[65,730,310,51]}
+{"kind":"shape","id":"sh/36p0vmls","slide":5,"bbox":[82,730,0.01,51]}
+{"kind":"textbox","id":"sh/47yh4r2d","slide":5,"text":"D8  Optimization Runs","textPreview":"D8  Optimization Runs","textChars":21,"textLines":1,"bbox":[446,730,360,51]}
+{"kind":"shape","id":"sh/p87ixw3y","slide":5,"bbox":[463,730,0.01,51]}
+{"kind":"shape","id":"sh/uhwzyhkb","slide":5,"bbox":[601,668,0.1,0.1]}
+{"kind":"shape","id":"sh/fi50rmlw","slide":5,"bbox":[601,730,0.1,0.1]}
+{"kind":"shape","id":"sh/gjeh0r2h","slide":5,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/hknitw32","slide":5,"text":"No feasible route: record the exception\nand return unassigned orders to the business.","textPreview":"No feasible route: record the exception | and return unassigned orders to the business.","textChars":85,"textLines":2,"bbox":[873,715,660,68]}
+{"kind":"textbox","id":"sh/6dczuhkf","slide":5,"text":"All labelled arrows carry data. Process 4.5 uses greedy improvement and 2-opt / local search.","textPreview":"All labelled arrows carry data. Process 4.5 uses greedy improvement and 2-opt / local search.","textChars":93,"textLines":1,"bbox":[65,786,1470,46]}
+{"kind":"notes","id":"nt/eiffqf","slide":5,"text":"Level 2 expands process 4. Receive Orders reads the validated order set. Retrieve Constraints adds capacity, driver availability, time windows and service times. Get Distances obtains a travel matrix from D6 and the Map API. Generate Initial Route constructs a feasible seed route where possible. Apply Optimization uses greedy improvement and 2-opt/local search to generate candidate routes. Check Constraints returns violation details for revision or sends a feasible plan to Calculate Metrics. Metrics include distance, estimated duration and a cost estimate based on supplied cost rules. Store Route writes D5 and the run outcome goes to D8. Infeasible orders remain explicit exceptions; the system must not silently break a hard constraint. A practical implementation needs a bounded search budget and a no-feasible-plan outcome. Map API requests and responses connect to 4.3 Get Distances. D6 supplies stored location data."}
+{"kind":"slide","id":"sl/1ljva6","slide":6,"title":"Optimization & route recalculation","textShapes":17}
+{"kind":"textbox","id":"sh/wnip07y1","slide":6,"text":"Optimization & route recalculation","textPreview":"Optimization & route recalculation","textChars":34,"textLines":1,"bbox":[65,45,1470,64]}
+{"kind":"textbox","id":"sh/vm9872hg","slide":6,"text":"The objective is a lower-cost feasible plan, rather than a guarantee of the global optimum.","textPreview":"The objective is a lower-cost feasible plan, rather than a guarantee of the global optimum.","textChars":91,"textLines":1,"bbox":[65,116,1450,42]}
+{"kind":"textbox","id":"sh/a1g7yxgv","slide":6,"text":"RouteMind","textPreview":"RouteMind","textChars":9,"textLines":1,"bbox":[65,849,400,22]}
+{"kind":"textbox","id":"sh/907q5sza","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1465,845,70,28]}
+{"kind":"textbox","id":"sh/8zypwnyp","slide":6,"text":"How the planner improves a route","textPreview":"How the planner improves a route","textChars":32,"textLines":1,"bbox":[65,213,820,45]}
+{"kind":"textbox","id":"sh/nyp83ihk","slide":6,"text":"1  Build a starting plan","textPreview":"1  Build a starting plan","textChars":24,"textLines":1,"bbox":[65,301,835,41]}
+{"kind":"textbox","id":"sh/mxg7udgz","slide":6,"text":"Choose feasible next stops using travel time,\npriority, remaining capacity and delivery windows.","textPreview":"Choose feasible next stops using travel time, | priority, remaining capacity and delivery windows.","textChars":96,"textLines":2,"bbox":[65,350,835,79]}
+{"kind":"textbox","id":"sh/lw7q18ze","slide":6,"text":"2  Improve the stop sequence","textPreview":"2  Improve the stop sequence","textChars":28,"textLines":1,"bbox":[65,441,835,41]}
+{"kind":"textbox","id":"sh/0vypsnyt","slide":6,"text":"Use 2-opt to reverse a route segment when it\nreduces cost and keeps all constraints satisfied.","textPreview":"Use 2-opt to reverse a route segment when it | reduces cost and keeps all constraints satisfied.","textChars":94,"textLines":2,"bbox":[65,490,835,79]}
+{"kind":"textbox","id":"sh/ih8zulon","slide":6,"text":"3  Compare and keep the better plan","textPreview":"3  Compare and keep the better plan","textChars":35,"textLines":1,"bbox":[65,581,835,41]}
+{"kind":"textbox","id":"sh/3ihg3q58","slide":6,"text":"Check total distance, estimated duration and\nunassigned orders before saving the result.","textPreview":"Check total distance, estimated duration and | unassigned orders before saving the result.","textChars":88,"textLines":2,"bbox":[65,630,835,79]}
+{"kind":"textbox","id":"sh/43qhwv6d","slide":6,"text":"When delivery plans change","textPreview":"When delivery plans change","textChars":26,"textLines":1,"bbox":[987,213,545,45]}
+{"kind":"textbox","id":"sh/54zy5gny","slide":6,"text":"New or cancelled order\nDriver delay\nUpdated customer availability","textPreview":"New or cancelled order | Driver delay | Updated customer availability","textChars":65,"textLines":3,"bbox":[987,301,540,122]}
+{"kind":"textbox","id":"sh/ud8zq1ob","slide":6,"text":"Replanning rule","textPreview":"Replanning rule","textChars":15,"textLines":1,"bbox":[987,474,540,39]}
+{"kind":"textbox","id":"sh/vehgz65w","slide":6,"text":"Keep completed stops fixed. Recalculate\nremaining deliveries from each driver’s\ncurrent location and remaining capacity.","textPreview":"Keep completed stops fixed. Recalculate | remaining deliveries from each driver’s | current location and remaining capacity.","textChars":120,"textLines":3,"bbox":[987,530,535,135]}
+{"kind":"textbox","id":"sh/gfqhsb6h","slide":6,"text":"Publish the revised route and ETA\nto the affected driver and customer.","textPreview":"Publish the revised route and ETA | to the affected driver and customer.","textChars":70,"textLines":2,"bbox":[987,702,535,77]}
+{"kind":"textbox","id":"sh/hgzy1gn2","slide":6,"text":"Hard limits: capacity and required time windows. Priority influences the choice among feasible plans.","textPreview":"Hard limits: capacity and required time windows. Priority influences the choice among feasible plans.","textChars":101,"textLines":1,"bbox":[65,786,1470,46]}
+{"kind":"notes","id":"nt/1ljva6","slide":6,"text":"A greedy rule makes a locally useful choice while constructing or improving a plan. It does not prove global optimality. A 2-opt move cuts two edges and reverses the intermediate sequence; the system accepts the change only if the route remains feasible and improves the objective. With multiple vehicles, initial allocation chooses feasible vehicle assignments and local search can also relocate orders between vehicles. Time windows require arrival-time and service-time checks. Replanning preserves completed deliveries and accounts for current location, remaining load and driver availability. Metrics are estimated, not promised savings."}
+{"kind":"slide","id":"sl/gkcyii","slide":7,"title":"System architecture & expected outcome","textShapes":16}
+{"kind":"textbox","id":"sh/idg3it8r","slide":7,"text":"System architecture & expected outcome","textPreview":"System architecture & expected outcome","textChars":38,"textLines":1,"bbox":[65,45,1470,64]}
+{"kind":"textbox","id":"sh/5g72t87i","slide":7,"text":"A proposed web application connects route planning, delivery tracking and map data.","textPreview":"A proposed web application connects route planning, delivery tracking and map data.","textChars":83,"textLines":1,"bbox":[65,116,1450,42]}
+{"kind":"textbox","id":"sh/4fylk3qx","slide":7,"text":"RouteMind","textPreview":"RouteMind","textChars":9,"textLines":1,"bbox":[65,849,400,22]}
+{"kind":"textbox","id":"sh/vq5knypg","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1465,845,70,28]}
+{"kind":"textbox","id":"sh/upw3et8v","slide":7,"text":"Frontend\nBusiness, driver & customer views","textPreview":"Frontend | Business, driver & customer views","textChars":42,"textLines":2,"bbox":[65,260,397,152]}
+{"kind":"textbox","id":"sh/hc72po76","slide":7,"text":"Backend\nPlanning & tracking services","textPreview":"Backend | Planning & tracking services","textChars":36,"textLines":2,"bbox":[607,260,395,152]}
+{"kind":"textbox","id":"sh/wbylgjq1","slide":7,"text":"Database\nD1–D8 records","textPreview":"Database | D1–D8 records","textChars":22,"textLines":2,"bbox":[1147,260,387,152]}
+{"kind":"shape","id":"sh/fm94zipk","slide":7,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/el03qd8z","slide":7,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/c3edsn2h","slide":7,"text":"Requests /\nresponses","textPreview":"Requests / | responses","textChars":20,"textLines":2,"bbox":[462,189,144,61]}
+{"kind":"textbox","id":"sh/d4ne1sj2","slide":7,"text":"Read /\nwrite data","textPreview":"Read / | write data","textChars":17,"textLines":2,"bbox":[1003,189,145,61]}
+{"kind":"textbox","id":"sh/qhcvqdkb","slide":7,"text":"Order and fleet entry\nRoute and map view\nDelivery status and ETA\nBusiness analytics","textPreview":"Order and fleet entry | Route and map view | Delivery status and ETA | Business analytics","textChars":83,"textLines":4,"bbox":[65,451,430,149]}
+{"kind":"textbox","id":"sh/rilczi1w","slide":7,"text":"Authentication and access\nConstraint validation\nRoute optimization\nReplanning and notifications","textPreview":"Authentication and access | Constraint validation | Route optimization | Replanning and notifications","textChars":95,"textLines":4,"bbox":[607,451,464,149]}
+{"kind":"textbox","id":"sh/4fudon25","slide":7,"text":"Orders, drivers and vehicles\nRoutes and locations\nDelivery events\nOptimization run history","textPreview":"Orders, drivers and vehicles | Routes and locations | Delivery events | Optimization run history","textChars":90,"textLines":4,"bbox":[1147,451,395,149]}
+{"kind":"textbox","id":"sh/pg3ux8jq","slide":7,"text":"Map / Routing API","textPreview":"Map / Routing API","textChars":17,"textLines":1,"bbox":[607,663,395,60]}
+{"kind":"shape","id":"sh/2dcvmdkf","slide":7,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/3elcvi1k","slide":7,"text":"Location, distance and travel-time queries","textPreview":"Location, distance and travel-time queries","textChars":42,"textLines":1,"bbox":[65,672,522,47]}
+{"kind":"textbox","id":"sh/gbadk329","slide":7,"text":"Expected outcome","textPreview":"Expected outcome","textChars":16,"textLines":1,"bbox":[65,766,392,47]}
+{"kind":"textbox","id":"sh/hc3ut8ju","slide":7,"text":"More consistent planning, visible delivery progress\nand clear reporting of infeasible orders.","textPreview":"More consistent planning, visible delivery progress | and clear reporting of infeasible orders.","textChars":93,"textLines":2,"bbox":[481,752,1045,79]}
+{"kind":"notes","id":"nt/gkcyii","slide":7,"text":"This is a proposed architecture rather than a claim of an implemented deployment. The frontend supports business planning, driver execution and customer status views. The backend enforces role-based authorization, validates data, computes routes, accepts delivery events and handles notifications. The database contains the eight named logical stores. A Map/Routing API supplies coordinates, distance and estimated travel time. Analytics can show planned versus actual duration, completed deliveries, pending deliveries and optimization run outcomes. API keys stay on the backend. Benefits are expected outcomes, with no invented performance or savings figures."}

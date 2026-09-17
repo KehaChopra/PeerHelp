@@ -9,6 +9,7 @@ export default defineConfig({
     path: "prisma/migrations",
   },
   datasource: {
-    url: process.env["DATABASE_URL"],
+    url:process.env["DATABASE_URL"],
   },
 });
+//contains prsima configuration such as schema location, migrations path, and datasource URL.

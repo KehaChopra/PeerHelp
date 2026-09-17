@@ -1,4 +1,5 @@
 import bcrypt from 'bcrypt'
+import { createAuthToken } from '../config/jwt.js'
 import { Prisma } from '../generated/prisma/client.js'
 import { prisma } from '../lib/prisma.js'
 
@@ -12,8 +13,14 @@ export interface SignupInput {
   subjectIds: number[]
 }
 
+export interface LoginInput {
+  email: string
+  password: string
+}
+
 export class EmailAlreadyExistsError extends Error {}
 export class InvalidSubjectsError extends Error {}
+export class InvalidCredentialsError extends Error {}
 
 export async function signupUser(input: SignupInput) {
   const existingUser = await prisma.user.findUnique({
@@ -75,5 +82,72 @@ export async function signupUser(input: SignupInput) {
     }
 
     throw error
+  }
+}
+
+export async function loginUser(input: LoginInput) {
+  const user = await prisma.user.findUnique({
+    where: { email: input.email },
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      passwordHash: true,
+      year: true,
+      isOnline: true,
+      createdAt: true,
+      updatedAt: true,
+      subjects: {
+        select: { subjectId: true },
+      },
+    },
+  })
+
+  if (!user) {
+    throw new InvalidCredentialsError('Invalid email or password')
+  }
+
+  const passwordMatches = await bcrypt.compare(input.password, user.passwordHash)
+
+  if (!passwordMatches) {
+    throw new InvalidCredentialsError('Invalid email or password')
+  }
+
+  const token = createAuthToken(user.id)
+  const { passwordHash: _passwordHash, subjects, ...safeUser } = user
+
+  return {
+    token,
+    user: {
+      ...safeUser,
+      subjectIds: subjects.map(({ subjectId }) => subjectId),
+    },
+  }
+}
+
+export async function getAuthenticatedUser(userId: number) {
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      year: true,
+      isOnline: true,
+      createdAt: true,
+      updatedAt: true,
+      subjects: {
+        select: { subjectId: true },
+      },
+    },
+  })
+
+  if (!user) return null
+
+  const { subjects, ...safeUser } = user
+
+  return {
+    ...safeUser,
+    subjectIds: subjects.map(({ subjectId }) => subjectId),
   }
 }
