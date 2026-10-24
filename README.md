@@ -90,6 +90,12 @@ Controllers trim text and reject blank/non-string values. Services verify refere
 
 Public question lists are newest first. Answers are oldest first, with ID as a tie-breaker. The single-question endpoint uses `findUnique()` and `_count.answers`, returning that count as `answerCount` without fetching every answer.
 
+Question lists accept an optional subject filter and pagination: `GET /api/questions?subjectId=4&page=1&limit=10`. Omitting the subject filter includes all subjects. `page` defaults to 1, and `limit` defaults to 10 (maximum 50). Supplied values must be single positive decimal integers; empty, repeated, nonnumeric, fractional, negative, and oversized values return `400`. Subject IDs and computed offsets must fit PostgreSQL's signed 32-bit range.
+
+Responses include `questions` and `pagination: { page, limit, total, totalPages, hasMore }`. Counts apply to the selected subject filter, and a repeatable-read transaction keeps the page and count on the same database snapshot. No matches return an empty array, zero totals, and `hasMore: false`; a page beyond the final page also returns an empty array and `hasMore: false`.
+
+For a future **Load more** button, request page 1, append the next page on each click, and hide the button when `hasMore` is false. Reset to page 1 and replace the existing list when the subject changes. Newest-first ordering uses ID to break timestamp ties. This is offset pagination: new posts/deletions between requests can shift page boundaries; cursor pagination can be considered later for an actively changing feed.
+
 ## Database
 
 | Model | Fields and relationships |
@@ -224,7 +230,7 @@ Base URL: `http://localhost:5000/api`. POST requests use `Content-Type: applicat
 | POST | /auth/login | Public | 200, token and safe user |
 | GET | /auth/me | JWT | 200, current safe user |
 | GET | /subjects | Public | 200, subjects sorted by name then ID |
-| GET | /questions | Public | 200, newest questions first |
+| GET | /questions?subjectId=<optional-id>&page=1&limit=10 | Public | 200, newest questions first with pagination and optional subject filter |
 | GET | /questions/:questionId | Public | 200, question with answerCount |
 | POST | /questions | JWT | 201, created question |
 | GET | /questions/:questionId/answers | Public | 200, oldest answers first |
@@ -342,7 +348,7 @@ Commit intended source/documentation/migration files. Dependencies, private envi
 
 ## Remaining work
 
-- Backend: subject filters, pagination, ownership-based edits/deletes, automated API tests.
+- Backend: ownership-based edits/deletes, automated API tests.
 - Frontend: routing, signup/login, authentication state, question feed/details, posting forms, loading/error/empty states.
 - Deployment readiness: restricted CORS origins (currently unrestricted), rate limits, startup environment validation, consistent error middleware, logging, graceful shutdown, browser token-storage/expiry decisions, deployment configuration.
 - Broader tutoring features: invitations, sessions, presence, Socket.IO communication, notifications, ratings.

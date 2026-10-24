@@ -32,10 +32,42 @@ function parseCreateQuestionBody(body: unknown): { text: string; subjectId: numb
   return { text: input.text.trim(), subjectId: input.subjectId as number }
 }
 
-export async function getQuestions(_request: Request, response: Response): Promise<void> {
+function parsePositiveQueryInteger(value: unknown, maximum: number): number | null {
+  if (typeof value !== 'string' || !/^[1-9]\d*$/.test(value)) {
+    return null
+  }
+
+  const parsed = Number(value)
+  return Number.isSafeInteger(parsed) && parsed <= maximum ? parsed : null
+}
+
+export async function getQuestions(request: Request, response: Response): Promise<void> {
+  const subjectId = request.query.subjectId === undefined
+    ? undefined
+    : parsePositiveQueryInteger(request.query.subjectId, 2147483647)
+  const page = request.query.page === undefined
+    ? 1
+    : parsePositiveQueryInteger(request.query.page, 2147483647)
+  const limit = request.query.limit === undefined
+    ? 10
+    : parsePositiveQueryInteger(request.query.limit, 50)
+
+  if (subjectId === null) {
+    response.status(400).json({ success: false, message: 'A valid subject ID is required' })
+    return
+  }
+
+  if (page === null || limit === null || (page - 1) * limit > 2147483647) {
+    response.status(400).json({
+      success: false,
+      message: 'Page must be a positive integer with a supported offset; limit must be between 1 and 50',
+    })
+    return
+  }
+
   try {
-    const questions = await listQuestions()
-    response.status(200).json({ success: true, questions })
+    const result = await listQuestions({ subjectId, page, limit })
+    response.status(200).json({ success: true, ...result })
   } catch {
     response.status(500).json({ success: false, message: 'Unable to retrieve questions' })
   }

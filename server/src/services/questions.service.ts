@@ -14,11 +14,33 @@ export class QuestionAuthorNotFoundError extends Error {}
 export class QuestionRelationUnavailableError extends Error {}
 export class QuestionNotFoundError extends Error {}
 
-export function listQuestions() {
-  return prisma.question.findMany({
-    select: questionSelect,
-    orderBy: [{ createdAt: 'desc' }, { id: 'desc' }],
+export async function listQuestions(input: { subjectId?: number; page: number; limit: number }) {
+  const where = input.subjectId === undefined ? {} : { subjectId: input.subjectId }
+  const [questions, total] = await prisma.$transaction([
+    prisma.question.findMany({
+      where,
+      select: questionSelect,
+      orderBy: [{ createdAt: 'desc' }, { id: 'desc' }],
+      skip: (input.page - 1) * input.limit,
+      take: input.limit,
+    }),
+    prisma.question.count({ where }),
+  ], {
+    isolationLevel: Prisma.TransactionIsolationLevel.RepeatableRead,
   })
+
+  const totalPages = Math.ceil(total / input.limit)
+
+  return {
+    questions,
+    pagination: {
+      page: input.page,
+      limit: input.limit,
+      total,
+      totalPages,
+      hasMore: input.page < totalPages,
+    },
+  }
 }
 
 export async function createQuestion(input: {
