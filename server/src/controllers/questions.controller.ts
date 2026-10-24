@@ -1,8 +1,10 @@
 import type { Request, Response } from 'express'
 import {
   createQuestion,
+  findQuestionById,
   listQuestions,
   QuestionAuthorNotFoundError,
+  QuestionNotFoundError,
   QuestionRelationUnavailableError,
   SubjectNotFoundError,
 } from '../services/questions.service.js'
@@ -69,5 +71,52 @@ export async function postQuestion(request: Request, response: Response): Promis
     }
 
     response.status(500).json({ success: false, message: 'Unable to post question' })
+  }
+}
+
+export async function getQuestion(
+  request: Request,
+  response: Response,
+): Promise<void> {
+  const rawId = request.params.questionId
+
+  if (typeof rawId !== 'string' || !/^[1-9]\d*$/.test(rawId)) {
+    response.status(400).json({
+      success: false,
+      message: 'A valid question ID is required',
+    })
+    return
+  }
+
+  const questionId = Number(rawId)
+
+  if (!Number.isSafeInteger(questionId) || questionId > 2147483647) {
+    response.status(400).json({
+      success: false,
+      message: 'A valid question ID is required',
+    })
+    return
+  }
+
+  try {
+    const question = await findQuestionById(questionId)
+
+    response.status(200).json({
+      success: true,
+      question,
+    })
+  } catch (error) {
+    if (error instanceof QuestionNotFoundError) {
+      response.status(404).json({
+        success: false,
+        message: error.message,
+      })
+      return
+    }
+
+    response.status(500).json({
+      success: false,
+      message: 'Unable to retrieve question',
+    })
   }
 }

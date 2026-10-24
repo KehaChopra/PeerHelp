@@ -12,6 +12,7 @@ const questionSelect = {
 export class SubjectNotFoundError extends Error {}
 export class QuestionAuthorNotFoundError extends Error {}
 export class QuestionRelationUnavailableError extends Error {}
+export class QuestionNotFoundError extends Error {}
 
 export function listQuestions() {
   return prisma.question.findMany({
@@ -58,5 +59,32 @@ export async function createQuestion(input: {
     }
 
     throw error
+  }
+}
+
+export async function findQuestionById(questionId: number) {
+  const question = await prisma.question.findUnique({
+    where: {
+      id: questionId,
+    },
+    select: {
+      ...questionSelect,
+      _count: {
+        select: {
+          answers: true,
+        },
+      },
+    },
+  })
+
+  if (!question) {
+    throw new QuestionNotFoundError('Question not found')
+  }
+
+  const { _count, ...safeQuestion } = question
+
+  return {
+    ...safeQuestion,
+    answerCount: _count.answers,
   }
 }
